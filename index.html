@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARPooling - Carpools Escolares</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='80' height='45' x='10' y='35' fill='%234CAF50'/><rect rx='10' width='50' height='30' x='20' y='12' fill='%234CAF50'/><circle cx='28' cy='82' r='10' fill='%23333'/><circle cx='72' cy='82' r='10' fill='%23333'/><rect x='25' y='18' width='18' height='16' rx='3' fill='%23fff' opacity='.7'/><rect x='48' y='18' width='18' height='16' rx='3' fill='%23fff' opacity='.7'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <a href="index.html" class="navbar-brand">ARPooling</a>
+      <span class="navbar-tagline">Carpools escolares</span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Encontrá familias para <span>compartir el viaje</span></h1>
+    <p>Conectamos familias cercanas para organizar carpools al colegio, deportes y eventos. Menos autos, menos estrés, más comunidad.</p>
+    <div class="hero-steps">
+      <div class="hero-step">
+        <div class="hero-step-icon hero-step-1"></div>
+        <span>Completá tus datos</span>
+      </div>
+      <div class="hero-step">
+        <div class="hero-step-icon hero-step-2"></div>
+        <span>Buscamos matches</span>
+      </div>
+      <div class="hero-step">
+        <div class="hero-step-icon hero-step-3"></div>
+        <span>Contactá por WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="escolar">Escolar</button>
+      <button class="tab-btn" data-tab="deportes">Deportes</button>
+      <button class="tab-btn" data-tab="eventos">Eventos</button>
+    </div>
+
+    <!-- ================================ -->
+    <!-- TAB: ESCOLAR                     -->
+    <!-- ================================ -->
+    <div id="tab-escolar" class="tab-panel active">
+      <form id="formEscolar" class="card" novalidate>
+        <h2 class="card-title">Carpool escolar</h2>
+
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="esc-nombre">Nombre de familia <span class="required">*</span></label>
+          <input type="text" id="esc-nombre" class="form-input" placeholder="Ej: Familia Pérez" autocomplete="off">
+          <div id="esc-nombre-error" class="form-error"></div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+          <label for="esc-direccion">Dirección <span class="required">*</span></label>
+          <input type="text" id="esc-direccion" class="form-input" placeholder="Ej: Av. Principal 123, Los Molinos" autocomplete="off">
+          <div id="esc-direccion-error" class="form-error"></div>
+        </div>
+
+        <!-- Colegios -->
+        <div class="form-group">
+          <label>Colegio/s <span class="required">*</span></label>
+          <div class="checkbox-group" id="esc-colegios">
+            <div class="checkbox-chip">
+              <input type="checkbox" id="col-los-molinos" name="colegios" value="los_molinos">
+              <label for="col-los-molinos">Los Molinos (varones)</label>
+            </div>
+            <div class="checkbox-chip">
+              <input type="checkbox" id="col-el-buen-ayre" name="colegios" value="el_buen_ayre">
+              <label for="col-el-buen-ayre">El Buen Ayre (mujeres)</label>
+            </div>
+          </div>
+          <div id="esc-colegios-error" class="form-error"></div>
+        </div>
+
+        <!-- Tipo de viaje -->
+        <div class="form-group">
+          <label>Tipo de viaje <span class="required">*</span></label>
+          <div class="radio-group" id="esc-tipo-viaje">
+            <div class="radio-chip">
+              <input type="radio" id="tipo-ida" name="tipoViaje" value="ida">
+              <label for="tipo-ida">Ida</label>
+            </div>
+            <div class="radio-chip">
+              <input type="radio" id="tipo-vuelta" name="tipoViaje" value="vuelta">
+              <label for="tipo-vuelta">Vuelta</label>
+            </div>
+            <div class="radio-chip">
+              <input type="radio" id="tipo-ambos" name="tipoViaje" value="ida_y_vuelta">
+              <label for="tipo-ambos">Ida y Vuelta</label>
+            </div>
+          </div>
+          <div id="esc-tipo-viaje-error" class="form-error"></div>
+        </div>
+
+        <!-- Horario de entrada -->
+        <div class="form-group" id="grupo-horario-entrada">
+          <label for="esc-horario-entrada">Horario de entrada <span class="required">*</span></label>
+          <select id="esc-horario-entrada" class="form-select">
+            <option value="">Seleccioná horario</option>
+            <option value="7:30 AM">7:30 AM</option>
+            <option value="7:45 AM">7:45 AM</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="8:15 AM">8:15 AM</option>
+            <option value="8:30 AM">8:30 AM</option>
+          </select>
+          <div id="esc-horario-entrada-error" class="form-error"></div>
+        </div>
+
+        <!-- Horario de salida -->
+        <div class="form-group hidden" id="grupo-horario-salida">
+          <label for="esc-horario-salida">Horario de salida <span class="required">*</span></label>
+          <select id="esc-horario-salida" class="form-select">
+            <option value="">Seleccioná horario</option>
+            <option value="3:45 PM">3:45 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:15 PM">4:15 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+          </select>
+          <div id="esc-horario-salida-error" class="form-error"></div>
+        </div>
+
+        <!-- Grados -->
+        <div class="form-group">
+          <label>Grados de tus hijos <span class="required">*</span></label>
+          <div class="checkbox-group" id="esc-grados">
+            <div class="checkbox-chip"><input type="checkbox" id="grado-0" name="grados" value="0"><label for="grado-0">Inicial</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-1" name="grados" value="1"><label for="grado-1">1ro</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-2" name="grados" value="2"><label for="grado-2">2do</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-3" name="grados" value="3"><label for="grado-3">3ro</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-4" name="grados" value="4"><label for="grado-4">4to</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-5" name="grados" value="5"><label for="grado-5">5to</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="grado-6" name="grados" value="6"><label for="grado-6">6to</label></div>
+          </div>
+          <div id="esc-grados-error" class="form-error"></div>
+        </div>
+
+        <!-- Días -->
+        <div class="form-group">
+          <label>Días disponibles <span class="required">*</span></label>
+          <div class="checkbox-group" id="esc-dias">
+            <div class="checkbox-chip"><input type="checkbox" id="esc-dia-1" name="dias" value="1"><label for="esc-dia-1">Lunes</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="esc-dia-2" name="dias" value="2"><label for="esc-dia-2">Martes</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="esc-dia-3" name="dias" value="3"><label for="esc-dia-3">Miércoles</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="esc-dia-4" name="dias" value="4"><label for="esc-dia-4">Jueves</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="esc-dia-5" name="dias" value="5"><label for="esc-dia-5">Viernes</label></div>
+          </div>
+          <div id="esc-dias-error" class="form-error"></div>
+        </div>
+
+        <!-- Lugares en auto -->
+        <div class="form-row">
+          <div class="form-group form-half">
+            <label for="esc-lugares">Lugares en el auto <span class="required">*</span></label>
+            <select id="esc-lugares" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 lugar</option>
+              <option value="2">2 lugares</option>
+              <option value="3">3 lugares</option>
+              <option value="4">4 lugares</option>
+              <option value="5">5 lugares</option>
+            </select>
+            <div id="esc-lugares-error" class="form-error"></div>
+          </div>
+          <div class="form-group form-half">
+            <label for="esc-hijos">Hijos a trasladar <span class="required">*</span></label>
+            <select id="esc-hijos" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 hijo</option>
+              <option value="2">2 hijos</option>
+              <option value="3">3 hijos</option>
+              <option value="4">4 hijos</option>
+            </select>
+            <div id="esc-hijos-error" class="form-error"></div>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="form-group">
+          <label for="esc-whatsapp">WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="esc-whatsapp" class="form-input" placeholder="+54 11 1234-5678" autocomplete="off">
+          <div id="esc-whatsapp-error" class="form-error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buscar Matches</button>
+      </form>
+    </div>
+
+    <!-- ================================ -->
+    <!-- TAB: DEPORTES                    -->
+    <!-- ================================ -->
+    <div id="tab-deportes" class="tab-panel">
+      <form id="formDeportes" class="card" novalidate>
+        <h2 class="card-title">Carpool deportivo</h2>
+
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="dep-nombre">Nombre de familia <span class="required">*</span></label>
+          <input type="text" id="dep-nombre" class="form-input" placeholder="Ej: Familia Pérez" autocomplete="off">
+          <div id="dep-nombre-error" class="form-error"></div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+          <label for="dep-direccion">Dirección <span class="required">*</span></label>
+          <input type="text" id="dep-direccion" class="form-input" placeholder="Ej: Av. Principal 123" autocomplete="off">
+          <div id="dep-direccion-error" class="form-error"></div>
+        </div>
+
+        <!-- Deportes -->
+        <div class="form-group">
+          <label>Deporte/s <span class="required">*</span></label>
+          <div class="checkbox-group" id="dep-deportes">
+            <div class="checkbox-chip"><input type="checkbox" id="dep-futbol" name="deportes" value="futbol"><label for="dep-futbol">Fútbol</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="dep-hockey" name="deportes" value="hockey"><label for="dep-hockey">Hockey</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="dep-tenis" name="deportes" value="tenis"><label for="dep-tenis">Tenis</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="dep-rugby" name="deportes" value="rugby"><label for="dep-rugby">Rugby</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="dep-natacion" name="deportes" value="natacion"><label for="dep-natacion">Natación</label></div>
+            <div class="checkbox-chip"><input type="checkbox" id="dep-otro" name="deportes" value="otro"><label for="dep-otro">Otro</label></div>
+          </div>
+          <div id="dep-deportes-error" class="form-error"></div>
+        </div>
+
+        <!-- Día -->
+        <div class="form-group">
+          <label for="dep-dia">Día <span class="required">*</span></label>
+          <select id="dep-dia" class="form-select">
+            <option value="">Seleccioná un día</option>
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+            <option value="Sábado">Sábado</option>
+            <option value="Domingo">Domingo</option>
+          </select>
+          <div id="dep-dia-error" class="form-error"></div>
+        </div>
+
+        <!-- Horario -->
+        <div class="form-group">
+          <label for="dep-horario">Horario <span class="required">*</span></label>
+          <select id="dep-horario" class="form-select">
+            <option value="">Seleccioná horario</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="8:30 AM">8:30 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="9:30 AM">9:30 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="10:30 AM">10:30 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="11:30 AM">11:30 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="2:30 PM">2:30 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="3:30 PM">3:30 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="5:30 PM">5:30 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+          </select>
+          <div id="dep-horario-error" class="form-error"></div>
+        </div>
+
+        <!-- Lugares / Hijos -->
+        <div class="form-row">
+          <div class="form-group form-half">
+            <label for="dep-lugares">Lugares en el auto <span class="required">*</span></label>
+            <select id="dep-lugares" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 lugar</option>
+              <option value="2">2 lugares</option>
+              <option value="3">3 lugares</option>
+              <option value="4">4 lugares</option>
+              <option value="5">5 lugares</option>
+            </select>
+            <div id="dep-lugares-error" class="form-error"></div>
+          </div>
+          <div class="form-group form-half">
+            <label for="dep-hijos">Hijos a trasladar <span class="required">*</span></label>
+            <select id="dep-hijos" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 hijo</option>
+              <option value="2">2 hijos</option>
+              <option value="3">3 hijos</option>
+              <option value="4">4 hijos</option>
+            </select>
+            <div id="dep-hijos-error" class="form-error"></div>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="form-group">
+          <label for="dep-whatsapp">WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="dep-whatsapp" class="form-input" placeholder="+54 11 1234-5678" autocomplete="off">
+          <div id="dep-whatsapp-error" class="form-error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buscar Matches</button>
+      </form>
+    </div>
+
+    <!-- ================================ -->
+    <!-- TAB: EVENTOS                     -->
+    <!-- ================================ -->
+    <div id="tab-eventos" class="tab-panel">
+      <form id="formEventos" class="card" novalidate>
+        <h2 class="card-title">Carpool para evento</h2>
+
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="evt-nombre">Nombre de familia <span class="required">*</span></label>
+          <input type="text" id="evt-nombre" class="form-input" placeholder="Ej: Familia Pérez" autocomplete="off">
+          <div id="evt-nombre-error" class="form-error"></div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+          <label for="evt-direccion">Dirección de tu casa <span class="required">*</span></label>
+          <input type="text" id="evt-direccion" class="form-input" placeholder="Ej: Av. Principal 123" autocomplete="off">
+          <div id="evt-direccion-error" class="form-error"></div>
+        </div>
+
+        <!-- Fecha -->
+        <div class="form-group">
+          <label for="evt-fecha">Fecha del evento <span class="required">*</span></label>
+          <input type="date" id="evt-fecha" class="form-input">
+          <div id="evt-fecha-error" class="form-error"></div>
+        </div>
+
+        <!-- Horario -->
+        <div class="form-group">
+          <label for="evt-horario">Horario del evento <span class="required">*</span></label>
+          <select id="evt-horario" class="form-select">
+            <option value="">Seleccioná horario</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="2:30 PM">2:30 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="3:30 PM">3:30 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="5:30 PM">5:30 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="6:30 PM">6:30 PM</option>
+            <option value="7:00 PM">7:00 PM</option>
+          </select>
+          <div id="evt-horario-error" class="form-error"></div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="form-group">
+          <label for="evt-descripcion">Descripción breve <span class="required">*</span></label>
+          <input type="text" id="evt-descripcion" class="form-input" placeholder='Ej: Cumple de Sofi' autocomplete="off">
+          <div id="evt-descripcion-error" class="form-error"></div>
+        </div>
+
+        <!-- Lugares / Hijos -->
+        <div class="form-row">
+          <div class="form-group form-half">
+            <label for="evt-lugares">Lugares en el auto <span class="required">*</span></label>
+            <select id="evt-lugares" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 lugar</option>
+              <option value="2">2 lugares</option>
+              <option value="3">3 lugares</option>
+              <option value="4">4 lugares</option>
+              <option value="5">5 lugares</option>
+            </select>
+            <div id="evt-lugares-error" class="form-error"></div>
+          </div>
+          <div class="form-group form-half">
+            <label for="evt-hijos">Hijos a trasladar <span class="required">*</span></label>
+            <select id="evt-hijos" class="form-select">
+              <option value="">Seleccioná</option>
+              <option value="1">1 hijo</option>
+              <option value="2">2 hijos</option>
+              <option value="3">3 hijos</option>
+              <option value="4">4 hijos</option>
+            </select>
+            <div id="evt-hijos-error" class="form-error"></div>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="form-group">
+          <label for="evt-whatsapp">WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="evt-whatsapp" class="form-input" placeholder="+54 11 1234-5678" autocomplete="off">
+          <div id="evt-whatsapp-error" class="form-error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buscar Matches</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    ARPooling &mdash; Conectando familias para carpools
+  </footer>
+
+  <!-- Loading overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <span class="loading-text">Buscando familias compatibles...</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
