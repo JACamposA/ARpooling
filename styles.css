@@ -37,6 +37,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* ============================================
@@ -48,7 +49,7 @@ body::before {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 260px;
+  height: 160px;
   pointer-events: none;
   z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 260' preserveAspectRatio='xMidYMax slice'%3E%3C!-- Sky gradient at top --%3E%3Cdefs%3E%3ClinearGradient id='skyFade' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f0f4e8' stop-opacity='1'/%3E%3Cstop offset='40%25' stop-color='%23f0f4e8' stop-opacity='0.3'/%3E%3Cstop offset='100%25' stop-color='%23f0f4e8' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3C!-- Ground / grass --%3E%3Crect y='200' width='1400' height='60' fill='%237cb342' rx='0'/%3E%3Crect y='195' width='1400' height='12' fill='%238bc34a' rx='6'/%3E%3C!-- Road --%3E%3Crect y='215' width='1400' height='28' fill='%23757575' rx='2'/%3E%3Crect x='60' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='160' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='260' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='360' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='460' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='560' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='660' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='760' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='860' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='960' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='1060' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='1160' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3Crect x='1260' y='227' width='40' height='4' fill='%23fff' rx='2' opacity='0.7'/%3E%3C!-- House 1 (red) --%3E%3Crect x='50' y='130' width='70' height='68' fill='%23e57373' rx='4' stroke='%23c62828' stroke-width='2'/%3E%3Cpolygon points='40,135 85,90 130,135' fill='%23c62828' stroke='%23b71c1c' stroke-width='2'/%3E%3Crect x='72' y='160' width='18' height='36' fill='%238d6e63' rx='2'/%3E%3Crect x='55' y='142' width='16' height='14' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3Crect x='100' y='142' width='16' height='14' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3C!-- House 2 (blue) --%3E%3Crect x='220' y='140' width='65' height='58' fill='%2364b5f6' rx='4' stroke='%231565c0' stroke-width='2'/%3E%3Cpolygon points='212,145 252,100 293,145' fill='%231e88e5' stroke='%230d47a1' stroke-width='2'/%3E%3Crect x='240' y='164' width='16' height='32' fill='%238d6e63' rx='2'/%3E%3Crect x='225' y='150' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3Crect x='268' y='150' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3C!-- Tree 1 --%3E%3Crect x='172' y='155' width='10' height='42' fill='%238d6e63' rx='2'/%3E%3Ccircle cx='177' cy='138' r='26' fill='%2366bb6a' stroke='%232e7d32' stroke-width='2'/%3E%3Ccircle cx='166' cy='148' r='18' fill='%2381c784' stroke='%234caf50' stroke-width='1.5'/%3E%3Ccircle cx='188' cy='145' r='16' fill='%23a5d6a7' stroke='%2366bb6a' stroke-width='1'/%3E%3C!-- House 3 (yellow) --%3E%3Crect x='380' y='135' width='75' height='63' fill='%23fff176' rx='4' stroke='%23f9a825' stroke-width='2'/%3E%3Cpolygon points='372,140 418,92 462,140' fill='%23ffb300' stroke='%23f57f17' stroke-width='2'/%3E%3Crect x='404' y='162' width='18' height='34' fill='%238d6e63' rx='2'/%3E%3Crect x='386' y='146' width='14' height='12' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3Crect x='434' y='146' width='14' height='12' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3C!-- Tree 2 --%3E%3Crect x='335' y='160' width='8' height='36' fill='%236d4c41' rx='2'/%3E%3Ccircle cx='339' cy='142' r='22' fill='%2381c784' stroke='%234caf50' stroke-width='2'/%3E%3Ccircle cx='330' cy='150' r='15' fill='%23a5d6a7'/%3E%3C!-- House 4 (green) --%3E%3Crect x='540' y='138' width='68' height='60' fill='%23a5d6a7' rx='4' stroke='%232e7d32' stroke-width='2'/%3E%3Cpolygon points='532,143 574,96 616,143' fill='%234caf50' stroke='%23388e3c' stroke-width='2'/%3E%3Crect x='562' y='165' width='16' height='31' fill='%238d6e63' rx='2'/%3E%3Crect x='546' y='149' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3Crect x='589' y='149' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3C!-- Tree 3 --%3E%3Crect x='492' y='158' width='9' height='38' fill='%238d6e63' rx='2'/%3E%3Ccircle cx='497' cy='140' r='24' fill='%2366bb6a' stroke='%232e7d32' stroke-width='2'/%3E%3Ccircle cx='508' cy='148' r='14' fill='%23a5d6a7'/%3E%3C!-- House 5 (orange) --%3E%3Crect x='700' y='132' width='72' height='66' fill='%23ffcc80' rx='4' stroke='%23e65100' stroke-width='2'/%3E%3Cpolygon points='692,137 736,88 780,137' fill='%23ff9800' stroke='%23e65100' stroke-width='2'/%3E%3Crect x='722' y='162' width='18' height='34' fill='%238d6e63' rx='2'/%3E%3Crect x='705' y='144' width='14' height='12' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3Crect x='750' y='144' width='14' height='12' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3C!-- Tree 4 --%3E%3Crect x='650' y='155' width='10' height='40' fill='%236d4c41' rx='2'/%3E%3Ccircle cx='655' cy='136' r='25' fill='%2381c784' stroke='%234caf50' stroke-width='2'/%3E%3Ccircle cx='645' cy='146' r='16' fill='%2366bb6a'/%3E%3C!-- House 6 (pink) --%3E%3Crect x='860' y='136' width='66' height='62' fill='%23f8bbd0' rx='4' stroke='%23c62828' stroke-width='2'/%3E%3Cpolygon points='852,141 893,94 934,141' fill='%23e91e63' stroke='%23ad1457' stroke-width='2'/%3E%3Crect x='880' y='164' width='16' height='32' fill='%238d6e63' rx='2'/%3E%3Crect x='865' y='148' width='13' height='11' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3Crect x='908' y='148' width='13' height='11' fill='%2390caf9' rx='2' stroke='%231565c0' stroke-width='1'/%3E%3C!-- Tree 5 --%3E%3Crect x='810' y='158' width='9' height='36' fill='%238d6e63' rx='2'/%3E%3Ccircle cx='815' cy='140' r='22' fill='%2366bb6a' stroke='%232e7d32' stroke-width='2'/%3E%3C!-- House 7 (purple) --%3E%3Crect x='1020' y='134' width='70' height='64' fill='%23ce93d8' rx='4' stroke='%237b1fa2' stroke-width='2'/%3E%3Cpolygon points='1012,139 1055,90 1098,139' fill='%239c27b0' stroke='%237b1fa2' stroke-width='2'/%3E%3Crect x='1042' y='164' width='16' height='32' fill='%238d6e63' rx='2'/%3E%3Crect x='1026' y='146' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3Crect x='1072' y='146' width='13' height='11' fill='%23fff9c4' rx='1' stroke='%23f9a825' stroke-width='1'/%3E%3C!-- Tree 6 --%3E%3Crect x='972' y='156' width='10' height='40' fill='%236d4c41' rx='2'/%3E%3Ccircle cx='977' cy='138' r='24' fill='%2381c784' stroke='%234caf50' stroke-width='2'/%3E%3Ccircle cx='968' cy='148' r='15' fill='%23a5d6a7'/%3E%3C!-- Small car on road --%3E%3Crect x='300' y='218' width='36' height='16' fill='%234caf50' rx='6'/%3E%3Crect x='308' y='212' width='20' height='10' fill='%234caf50' rx='4'/%3E%3Ccircle cx='310' cy='236' r='4' fill='%23333'/%3E%3Ccircle cx='328' cy='236' r='4' fill='%23333'/%3E%3Crect x='312' y='214' width='7' height='6' rx='1' fill='%23fff' opacity='0.6'/%3E%3C!-- Small car 2 on road --%3E%3Crect x='750' y='218' width='36' height='16' fill='%23e91e63' rx='6'/%3E%3Crect x='758' y='212' width='20' height='10' fill='%23e91e63' rx='4'/%3E%3Ccircle cx='760' cy='236' r='4' fill='%23333'/%3E%3Ccircle cx='778' cy='236' r='4' fill='%23333'/%3E%3Crect x='762' y='214' width='7' height='6' rx='1' fill='%23fff' opacity='0.6'/%3E%3C!-- Sun --%3E%3Ccircle cx='1300' cy='40' r='30' fill='%23ffd54f' opacity='0.6'/%3E%3Cline x1='1300' y1='2' x2='1300' y2='18' stroke='%23ffd54f' stroke-width='3' stroke-linecap='round' opacity='0.5'/%3E%3Cline x1='1340' y1='18' x2='1328' y2='28' stroke='%23ffd54f' stroke-width='3' stroke-linecap='round' opacity='0.5'/%3E%3Cline x1='1348' y1='40' x2='1335' y2='40' stroke='%23ffd54f' stroke-width='3' stroke-linecap='round' opacity='0.5'/%3E%3Cline x1='1260' y1='18' x2='1272' y2='28' stroke='%23ffd54f' stroke-width='3' stroke-linecap='round' opacity='0.5'/%3E%3Cline x1='1252' y1='40' x2='1265' y2='40' stroke='%23ffd54f' stroke-width='3' stroke-linecap='round' opacity='0.5'/%3E%3C!-- Clouds --%3E%3Cellipse cx='200' cy='50' rx='40' ry='18' fill='%23fff' opacity='0.45'/%3E%3Cellipse cx='230' cy='44' rx='30' ry='14' fill='%23fff' opacity='0.35'/%3E%3Cellipse cx='700' cy='35' rx='45' ry='16' fill='%23fff' opacity='0.4'/%3E%3Cellipse cx='735' cy='30' rx='28' ry='12' fill='%23fff' opacity='0.3'/%3E%3C!-- Fade overlay to blend with body bg --%3E%3Crect y='0' width='1400' height='260' fill='url(%23skyFade)'/%3E%3C/svg%3E");
@@ -65,30 +66,30 @@ body::before {
 }
 
 /* --- Navbar --- */
-.navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); padding: 12px 20px; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
+.navbar { background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); padding: 10px 14px; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-sm); }
 .navbar-content { max-width: var(--max-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.navbar-brand { font-size: 1.25rem; font-weight: 700; color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.navbar-brand { font-size: 1.1rem; font-weight: 700; color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
 .navbar-brand:hover { opacity: 0.85; }
-.navbar-tagline { font-size: 0.8rem; color: var(--color-text-muted); display: none; }
-@media (min-width: 480px) { .navbar-tagline { display: inline; } }
+.navbar-tagline { font-size: 0.75rem; color: var(--color-text-muted); display: none; }
+@media (min-width: 480px) { .navbar-tagline { display: inline; } .navbar { padding: 12px 20px; } .navbar-brand { font-size: 1.25rem; } }
 
 /* --- Container --- */
-.container { max-width: var(--max-width); margin: 0 auto; padding: 20px 16px 40px; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 12px 12px 32px; }
 
 /* --- Hero --- */
-.hero { text-align: center; padding: 32px 20px 24px; }
-.hero h1 { font-size: 1.65rem; font-weight: 800; color: var(--color-text); margin-bottom: 10px; line-height: 1.2; }
+.hero { text-align: center; padding: 20px 16px 16px; }
+.hero h1 { font-size: 1.3rem; font-weight: 800; color: var(--color-text); margin-bottom: 8px; line-height: 1.25; }
 .hero h1 span { color: var(--color-primary); }
-.hero p { font-size: 0.95rem; color: var(--color-text-light); max-width: 500px; margin: 0 auto 20px; }
-.hero-steps { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
-.hero-step { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 0.83rem; color: var(--color-text-light); }
+.hero p { font-size: 0.85rem; color: var(--color-text-light); max-width: 500px; margin: 0 auto 14px; }
+.hero-steps { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+.hero-step { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 0.75rem; color: var(--color-text-light); }
 
 /* Hero step icons - SVG-based */
 .hero-step-icon {
-  width: 48px; height: 48px; border-radius: 50%;
+  width: 40px; height: 40px; border-radius: 50%;
   background: var(--color-primary-light);
   display: flex; align-items: center; justify-content: center;
-  background-size: 26px 26px;
+  background-size: 22px 22px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -145,8 +146,8 @@ body::before {
 /* --- Tabs --- */
 .tabs { display: flex; gap: 0; background: var(--color-bg-white); border-radius: var(--radius-md) var(--radius-md) 0 0; box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 0; }
 .tab-btn {
-  flex: 1; padding: 14px 16px; border: none; background: var(--color-bg-white);
-  font-size: 0.9rem; font-weight: 600; font-family: var(--font-family);
+  flex: 1; padding: 12px 8px; border: none; background: var(--color-bg-white);
+  font-size: 0.85rem; font-weight: 600; font-family: var(--font-family);
   color: var(--color-text-muted); cursor: pointer;
   border-bottom: 3px solid transparent;
   transition: all var(--transition);
@@ -157,7 +158,7 @@ body::before {
 .tab-panel.active { display: block; }
 
 /* --- Card --- */
-.card { background: var(--color-bg-white); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 28px 24px; margin-bottom: 20px; }
+.card { background: var(--color-bg-white); border-radius: 0 0 var(--radius-md) var(--radius-md); box-shadow: var(--shadow-md); padding: 20px 16px; margin-bottom: 16px; }
 .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
 
 /* --- Form --- */
@@ -167,9 +168,9 @@ body::before {
 .form-group.hidden { display: none; }
 
 .form-input, .form-select {
-  width: 100%; padding: 10px 14px;
+  width: 100%; padding: 12px 14px;
   border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
-  font-size: 0.93rem; font-family: var(--font-family); color: var(--color-text);
+  font-size: 16px; font-family: var(--font-family); color: var(--color-text);
   background: var(--color-bg-white);
   transition: border-color var(--transition), box-shadow var(--transition);
   appearance: none; -webkit-appearance: none;
@@ -181,8 +182,8 @@ body::before {
   background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
 }
 
-/* Form row (side by side) */
-.form-row { display: flex; gap: 12px; }
+/* Form row (stacked on mobile, side-by-side on tablet+) */
+.form-row { display: flex; flex-direction: column; gap: 0; }
 .form-half { flex: 1; }
 
 /* --- Checkbox & Radio Groups --- */
@@ -193,9 +194,9 @@ body::before {
 .radio-chip input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
 
 .checkbox-chip label, .radio-chip label {
-  display: inline-block; padding: 7px 14px;
+  display: inline-block; padding: 10px 16px;
   border: 1.5px solid var(--color-border); border-radius: 20px;
-  font-size: 0.83rem; font-weight: 500; color: var(--color-text-light);
+  font-size: 0.85rem; font-weight: 500; color: var(--color-text-light);
   cursor: pointer; transition: all var(--transition); user-select: none;
 }
 .checkbox-chip label:hover, .radio-chip label:hover { border-color: var(--color-primary); color: var(--color-primary); }
@@ -211,8 +212,8 @@ body::before {
   cursor: pointer; transition: all var(--transition); text-decoration: none;
 }
 .btn-primary {
-  background: var(--color-primary); color: white; width: 100%; padding: 14px 28px;
-  font-size: 1.05rem; box-shadow: 0 2px 8px rgba(76,175,80,0.3);
+  background: var(--color-primary); color: white; width: 100%; padding: 16px 28px;
+  font-size: 1rem; box-shadow: 0 2px 8px rgba(76,175,80,0.3);
 }
 .btn-primary:hover { background: var(--color-primary-dark); box-shadow: 0 4px 14px rgba(76,175,80,0.4); transform: translateY(-1px); }
 .btn-primary:active { transform: translateY(0); }
@@ -221,7 +222,7 @@ body::before {
 .btn-secondary:hover { background: var(--color-border); }
 
 .btn-whatsapp {
-  background: var(--color-whatsapp); color: white; padding: 10px 20px;
+  background: var(--color-whatsapp); color: white; padding: 14px 20px;
   font-size: 0.9rem; box-shadow: 0 2px 8px rgba(37,211,102,0.3);
 }
 .btn-whatsapp:hover { background: #1ebe57; box-shadow: 0 4px 14px rgba(37,211,102,0.4); transform: translateY(-1px); }
@@ -238,9 +239,9 @@ body::before {
 .loading-text { font-size: 0.95rem; color: var(--color-text-light); font-weight: 500; }
 
 /* --- Results --- */
-.results-header { text-align: center; margin-bottom: 24px; }
-.results-header h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
-.results-header p { color: var(--color-text-light); font-size: 0.9rem; }
+.results-header { text-align: center; margin-bottom: 16px; }
+.results-header h1 { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+.results-header p { color: var(--color-text-light); font-size: 0.85rem; }
 
 .results-summary {
   display: flex; align-items: center; justify-content: center; gap: 8px;
@@ -251,7 +252,7 @@ body::before {
 /* --- Match Cards --- */
 .match-card {
   background: var(--color-bg-white); border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md); padding: 20px; margin-bottom: 16px;
+  box-shadow: var(--shadow-md); padding: 16px; margin-bottom: 12px;
   transition: box-shadow var(--transition), transform var(--transition);
   animation: fadeInUp 0.4s ease both;
 }
@@ -263,8 +264,8 @@ body::before {
 .match-card:nth-child(5) { animation-delay: 0.2s; }
 .match-card:nth-child(6) { animation-delay: 0.25s; }
 
-.match-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.match-card-name { font-size: 1.1rem; font-weight: 700; }
+.match-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
+.match-card-name { font-size: 1rem; font-weight: 700; }
 
 /* Badge row */
 .match-card-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
@@ -306,8 +307,8 @@ body::before {
 }
 
 /* Details */
-.match-details { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-.match-detail { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--color-text-light); }
+.match-details { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.match-detail { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--color-text-light); }
 
 /* Days */
 .days-row { display: flex; gap: 5px; flex-wrap: wrap; }
@@ -336,15 +337,31 @@ body::before {
 .form-error { display: none; font-size: 0.8rem; color: #e53935; margin-top: 4px; }
 .form-error.visible { display: block; }
 
-/* --- Responsive --- */
-@media (min-width: 600px) {
-  .container { padding: 28px 20px 48px; }
-  .hero h1 { font-size: 2rem; }
-  .card { padding: 32px; }
+/* --- Responsive (mobile-first: base is mobile, scale up) --- */
+
+/* Tablets & small desktops */
+@media (min-width: 480px) {
+  .hero { padding: 28px 20px 20px; }
+  .hero h1 { font-size: 1.5rem; }
+  .hero p { font-size: 0.9rem; }
+  .hero-steps { gap: 24px; }
+  .hero-step { font-size: 0.83rem; }
+  .hero-step-icon { width: 48px; height: 48px; background-size: 26px 26px; }
+  .container { padding: 16px 16px 40px; }
+  .card { padding: 24px 20px; }
+  .form-row { flex-direction: row; gap: 12px; }
+  .match-card { padding: 20px; margin-bottom: 16px; }
+  .match-card-name { font-size: 1.1rem; }
+  body::before { height: 220px; }
 }
-@media (max-width: 400px) {
-  .hero h1 { font-size: 1.35rem; }
-  .tab-btn { font-size: 0.8rem; padding: 12px 8px; }
-  .form-row { flex-direction: column; gap: 0; }
-  .match-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+/* Desktop */
+@media (min-width: 640px) {
+  .hero { padding: 32px 20px 24px; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.95rem; margin-bottom: 20px; }
+  .container { padding: 28px 20px 48px; }
+  .card { padding: 32px; }
+  body::before { height: 260px; }
+  .checkbox-chip label, .radio-chip label { padding: 8px 14px; font-size: 0.83rem; }
 }
